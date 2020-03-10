@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import entity.Product;
+import exception.ProgramException;
 
 public class ReaderCsv {
 	
@@ -35,9 +36,10 @@ public class ReaderCsv {
 				Integer quantity = Integer.parseInt(productLine[2]);
 				Product product = new Product(productLine[0],price,quantity);
 				list.add(product);
+				line = br.readLine();
 			}
 		} catch (IOException e) {
-			System.out.println("Erro: " + e.getMessage());
+			throw new ProgramException(e.getMessage());
 		}
 	}
 	

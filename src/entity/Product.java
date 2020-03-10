@@ -34,4 +34,8 @@ public class Product {
 	public Double totalPrice() {
 		return price * quantity;
 	}
+	
+	public String toOutCsv() {
+		return name + "," + String.format("%.2f", totalPrice());
+	}
 }

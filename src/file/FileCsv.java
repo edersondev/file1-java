@@ -1,20 +1,22 @@
 package file;
 
-import java.util.ArrayList;
-
-import entity.Product;
+import exception.ProgramException;
 
 public class FileCsv {
 	
-	private ArrayList<Product> productList;
+	private WriterCsv wcsv;
+	private String filePath;
 	
 	public FileCsv(String filePath) {
-		ReaderCsv re = new ReaderCsv(filePath);
-		productList = re.getList();
-	}
-
-	public ArrayList<Product> getProductList() {
-		return productList;
+		this.filePath = filePath;
 	}
 	
+	public void readAndWrite() {
+		try {
+			wcsv = new WriterCsv(filePath, new ReaderCsv(filePath));
+			wcsv.WriterFile();
+		} catch(ProgramException e) {
+			System.out.println(e.getMessage());
+		}
+	}
 }

@@ -2,6 +2,7 @@ package application;
 
 import java.util.Scanner;
 
+import exception.ProgramException;
 import file.FileCsv;
 
 public class Program {
@@ -11,8 +12,14 @@ public class Program {
 	public static void main(String[] args) {
 		sc = new Scanner(System.in);
 		System.out.println("Enter file path: ");
-		String filePath = sc.nextLine();		
-		FileCsv fscv = new FileCsv(filePath);
+		String filePath = sc.nextLine();
+		
+		try {
+			FileCsv fscv = new FileCsv(filePath);
+			fscv.readAndWrite();	
+		} catch (ProgramException e) {
+			System.out.println("Error: " + e.getMessage());
+		}
 	}
 
 }
