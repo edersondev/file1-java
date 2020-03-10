@@ -4,13 +4,14 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import entity.Product;
 import exception.ProgramException;
 
 public class ReaderCsv {
 	
-	private ArrayList<Product> list;
+	private List<Product> list;
 	private String filePath;
 	
 	public ReaderCsv(String filePath) {
@@ -19,7 +20,7 @@ public class ReaderCsv {
 		this.processFile();
 	}
 
-	public ArrayList<Product> getList() {
+	public List<Product> getList() {
 		return list;
 	}
 	

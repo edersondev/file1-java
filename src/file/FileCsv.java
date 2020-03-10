@@ -5,7 +5,7 @@ import exception.ProgramException;
 public class FileCsv {
 	
 	private WriterCsv wcsv;
-	private String filePath;
+	protected String filePath;
 	
 	public FileCsv(String filePath) {
 		this.filePath = filePath;

@@ -4,7 +4,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.List;
 
 import entity.Product;
 import exception.ProgramException;
@@ -22,7 +22,7 @@ public class WriterCsv {
 	public void WriterFile() {
 		String pathOut = this.setPathOut();
 		try(BufferedWriter bw = new BufferedWriter(new FileWriter(pathOut))){
-			ArrayList<Product> listProduct = readCsv.getList();
+			List<Product> listProduct = readCsv.getList();
 			for(Product p : listProduct) {
 				bw.write(p.toOutCsv());
 				bw.newLine();

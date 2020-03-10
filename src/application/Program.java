@@ -19,6 +19,8 @@ public class Program {
 			fscv.readAndWrite();	
 		} catch (ProgramException e) {
 			System.out.println("Error: " + e.getMessage());
+		} finally {
+			sc.close();
 		}
 	}
 
